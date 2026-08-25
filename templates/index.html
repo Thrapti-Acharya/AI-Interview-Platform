@@ -10,7 +10,7 @@
     <title>PrepAI | AI Interview & Placement Preparation Platform</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -180,7 +180,7 @@
 
     <div class="hero-right">
 
-        <img src="images/hero.png" alt="AI Placement Platform">
+        <img src="{{ url_for('static', filename='images/hero.png') }}" alt="AI Placement Platform">
 
     </div>
 
@@ -189,7 +189,7 @@
         FEATURES SECTION
 =========================================== -->
 
-<section class="features" id="features"></section>
+<section class="features" id="features">
 
     <div class="section-title">
 
@@ -310,7 +310,7 @@
 
     <div class="why-right">
 
-        <img src="images/why-us.png" alt="Why Choose PrepAI">
+        <img src="{{ url_for('static', filename='images/why-us.png') }}" alt="Why Choose PrepAI">
 
     </div>
 

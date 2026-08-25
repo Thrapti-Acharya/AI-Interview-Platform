@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PrepAI | Interview Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='CSS/interview.css') }}">
+
+    <style>
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 80px;
+            box-sizing: border-box;
+        }
+
+        .result-card {
+            width: 500px;
+            max-width: 90%;
+            text-align: center;
+            padding: 45px 35px;
+            border-radius: 20px;
+        }
+
+        .result-icon {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .result-card h1 {
+            margin-bottom: 15px;
+        }
+
+        .score-title {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .score {
+            font-size: 55px;
+            font-weight: 700;
+            margin: 10px 0 20px;
+            color: #4338ca;
+        }
+
+        .result-message {
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .dashboard-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #4338ca;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .dashboard-btn:hover {
+            background: #3730a3;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="question-box result-card">
+
+        <div class="result-icon">
+            🎉
+        </div>
+
+        <h1>Interview Completed!</h1>
+
+        <p class="score-title">
+            Your Interview Score
+        </p>
+
+        <div class="score">
+            {{ score }}/100
+        </div>
+
+        {% if score >= 80 %}
+
+            <p class="result-message">
+                🌟 Excellent communication skills!
+            </p>
+
+        {% elif score >= 60 %}
+
+            <p class="result-message">
+                👍 Good performance. Keep practicing!
+            </p>
+
+        {% else %}
+
+            <p class="result-message">
+                💪 You need more interview practice.
+            </p>
+
+        {% endif %}
+
+        <a href="{{ url_for('dashboard') }}"
+           class="dashboard-btn">
+
+            ← Back to Dashboard
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>

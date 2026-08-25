@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PrepAI | Resume Analysis</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='CSS/resume.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="resume-result-container">
+
+    <!-- Header -->
+
+    <div class="resume-result-header">
+
+        <div>
+            <h1>📄 Resume Analysis</h1>
+
+            <p>
+                Here's how your resume performs for placement preparation.
+            </p>
+        </div>
+
+        <a href="{{ url_for('dashboard') }}" class="back-btn">
+            ← Dashboard
+        </a>
+
+    </div>
+
+
+    <!-- Score -->
+
+    <div class="score-card">
+
+        <div class="score-circle">
+
+            <span>{{ score }}%</span>
+
+        </div>
+
+        <div class="score-info">
+
+            <h2>{{ strength }}</h2>
+
+            <p>
+                {{ message }}
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Detected Skills -->
+
+    <div class="result-card">
+
+        <h2>✅ Detected Skills</h2>
+
+        {% if skills %}
+
+        <div class="skill-tags">
+
+            {% for skill in skills %}
+
+            <span>
+                {{ skill }}
+            </span>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <p class="empty-message">
+            No technical skills were detected in your resume.
+        </p>
+
+        {% endif %}
+
+    </div>
+
+
+    <!-- Missing Skills -->
+
+    <div class="result-card">
+
+        <h2>📚 Skills You Can Add</h2>
+
+        {% if missing_skills %}
+
+        <div class="skill-tags missing">
+
+            {% for skill in missing_skills %}
+
+            <span>
+                {{ skill }}
+            </span>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <p class="success-message">
+            🎉 Excellent! No major skills are missing from our checklist.
+        </p>
+
+        {% endif %}
+
+    </div>
+
+
+    <!-- Suggestions -->
+
+    <div class="result-card">
+
+        <h2>💡 Improvement Suggestions</h2>
+
+        <ul class="suggestions">
+
+            {% for suggestion in suggestions %}
+
+            <li>
+                {{ suggestion }}
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+
+    <!-- Actions -->
+
+    <div class="result-actions">
+
+        <a href="{{ url_for('resume') }}" class="primary-btn">
+            Analyze Another Resume
+        </a>
+
+        <a href="{{ url_for('dashboard') }}" class="secondary-btn">
+            Back to Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

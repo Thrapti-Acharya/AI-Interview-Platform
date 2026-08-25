@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Company Recommendation</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='CSS/recommendation.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Recommended Companies</h1>
+
+<h2>Your Average Score: {{ average }}%</h2>
+
+{% for company in companies %}
+
+<div class="company">
+
+{{ company }}
+
+</div>
+
+{% endfor %}
+
+<br>
+
+<a href="{{ url_for('dashboard') }}">
+
+<button>Back to Dashboard</button>
+
+</a>
+
+</div>
+
+</body>
+
+</html>

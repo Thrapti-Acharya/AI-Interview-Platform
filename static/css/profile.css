@@ -1,0 +1,46 @@
+body{
+    font-family:Poppins,sans-serif;
+    background:#f4f6fb;
+}
+
+.container{
+    width:60%;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+td{
+    border:1px solid #ddd;
+    padding:12px;
+}
+
+button{
+    padding:12px 25px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.profile-image{
+    text-align:center;
+    margin:20px 0;
+}
+
+.profile-image img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #4f46e5;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}

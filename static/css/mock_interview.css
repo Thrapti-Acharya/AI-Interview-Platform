@@ -1,0 +1,35 @@
+body{
+    font-family:Poppins,sans-serif;
+    background:#f4f6fb;
+}
+
+.container{
+    width:70%;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,.1);
+}
+
+.question-box{
+    background:#eef5ff;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+textarea{
+    width:100%;
+    padding:15px;
+    font-size:16px;
+}
+
+button{
+    padding:12px 25px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}

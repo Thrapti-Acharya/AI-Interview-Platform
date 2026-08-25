@@ -1,0 +1,260 @@
+body{
+    font-family:Poppins,sans-serif;
+    background:#eef2ff;
+}
+
+.container{
+    width:70%;
+    margin:auto;
+    padding:40px;
+}
+
+.upload-box{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 15px rgba(0,0,0,.1);
+}
+
+button{
+    background:#4f46e5;
+    color:white;
+    border:none;
+    padding:12px 30px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* ================================= */
+/* Resume Analysis Result Page */
+/* ================================= */
+
+.resume-result-container {
+    width: 90%;
+    max-width: 1050px;
+    margin: 40px auto;
+}
+
+.resume-result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.resume-result-header h1 {
+    color: #312e81;
+    font-size: 30px;
+}
+
+.resume-result-header p {
+    color: #6b7280;
+    margin-top: 5px;
+}
+
+.back-btn {
+    text-decoration: none;
+    background: #4f46e5;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 9px;
+    font-weight: 600;
+}
+
+.back-btn:hover {
+    background: #3730a3;
+}
+
+
+/* Score */
+
+.score-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.07);
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    margin-bottom: 25px;
+}
+
+.score-circle {
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    background: #eef2ff;
+    border: 10px solid #4f46e5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.score-circle span {
+    font-size: 28px;
+    font-weight: 700;
+    color: #312e81;
+}
+
+.score-info h2 {
+    color: #312e81;
+    margin-bottom: 8px;
+}
+
+.score-info p {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+
+/* Result Cards */
+
+.result-card {
+    background: white;
+    padding: 28px;
+    border-radius: 16px;
+
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+
+    margin-bottom: 20px;
+}
+
+.result-card h2 {
+    color: #312e81;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+
+/* Skill Tags */
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.skill-tags span {
+    background: #eef2ff;
+    color: #3730a3;
+
+    padding: 7px 12px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.skill-tags.missing span {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+
+/* Messages */
+
+.empty-message {
+    color: #6b7280;
+}
+
+.success-message {
+    color: #15803d;
+    font-weight: 600;
+}
+
+
+/* Suggestions */
+
+.suggestions {
+    list-style: none;
+    padding: 0;
+}
+
+.suggestions li {
+    background: #f8f9ff;
+    border-left: 4px solid #4f46e5;
+
+    padding: 13px 15px;
+
+    margin-bottom: 10px;
+
+    border-radius: 7px;
+
+    color: #4b5563;
+}
+
+
+/* Buttons */
+
+.result-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.primary-btn,
+.secondary-btn {
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 9px;
+    font-weight: 600;
+}
+
+.primary-btn {
+    background: #4f46e5;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #3730a3;
+}
+
+.secondary-btn {
+    background: white;
+    color: #4f46e5;
+    border: 1px solid #c7d2fe;
+}
+
+.secondary-btn:hover {
+    background: #eef2ff;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .resume-result-container {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .resume-result-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .score-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .result-actions {
+        flex-direction: column;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        text-align: center;
+    }
+}

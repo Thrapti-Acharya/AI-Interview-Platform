@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PrepAI | Company Recommendation</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='CSS/companies.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="company-container">
+
+    <!-- Header -->
+
+    <div class="company-header">
+
+        <div>
+
+            <h1>🏢 Company Recommendation</h1>
+
+            <p>
+                Discover companies that match your skills and career goals.
+            </p>
+
+        </div>
+
+        <a href="{{ url_for('dashboard') }}" class="back-btn">
+            ← Dashboard
+        </a>
+
+    </div>
+
+
+    <!-- Skill Selection -->
+
+    <div class="recommendation-box">
+
+        <h2>🎯 Find Your Best Company Matches</h2>
+
+        <p class="description">
+            Select one or more skills you have. Our recommendation system
+            will compare your skills with company requirements.
+        </p>
+
+
+        <form method="POST">
+
+            <label>Select Your Skills</label>
+
+            <div class="skills-container">
+
+                <label class="skill-option">
+                    <input type="checkbox"
+                           name="skills"
+                           value="Python">
+                    Python
+                </label>
+
+
+                <label class="skill-option">
+                    <input type="checkbox"
+                           name="skills"
+                           value="Java">
+                    Java
+                </label>
+
+
+                <label class="skill-option">
+                    <input type="checkbox"
+                           name="skills"
+                           value="Web Development">
+                    Web Development
+                </label>
+
+
+                <label class="skill-option">
+                    <input type="checkbox"
+                           name="skills"
+                           value="AI/ML">
+                    AI / Machine Learning
+                </label>
+
+
+                <label class="skill-option">
+                    <input type="checkbox"
+                           name="skills"
+                           value="SQL">
+                    SQL / Database
+                </label>
+
+            </div>
+
+
+            <button type="submit">
+                🔍 Find My Company Matches
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- Results -->
+
+    {% if companies %}
+
+    <div class="results-section">
+
+        <h2>✨ Your Recommended Companies</h2>
+
+        <p>
+            Companies are ranked according to how closely their required
+            skills match your selected skills.
+        </p>
+
+
+        <div class="company-grid">
+
+            {% for company in companies %}
+
+            <div class="company-card">
+
+
+                <div class="company-icon">
+                    🏢
+                </div>
+
+
+                <div class="company-info">
+
+                    <h3>
+                        {{ company.name }}
+                    </h3>
+
+
+                    <div class="match-percentage">
+
+                        {{ company.match }}% Skill Match
+
+                    </div>
+
+                    <p class="match-message">
+
+                        {% if company.match >= 80 %}
+
+                            ⭐ Excellent match for your skills!
+
+                        {% elif company.match >= 50 %}
+
+                            👍 Good match. Consider improving your skills further.
+
+                        {% else %}
+
+                            📚 Build more relevant skills for this company.
+
+                        {% endif %}
+
+                    </p>
+
+
+                    <p class="matching-title">
+                        Matching Skills:
+                    </p>
+
+
+                    <div class="matching-skills">
+
+                        {% for skill in company.skills %}
+
+                        <span>
+                            {{ skill }}
+                        </span>
+
+                        {% endfor %}
+
+                    </div>
+
+
+                    <p class="matching-title">
+                        Recommended Roles:
+                    </p>
+
+
+                    <div class="roles">
+
+                        {% for role in company.roles %}
+
+                        <span>
+                            {{ role }}
+                        </span>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>

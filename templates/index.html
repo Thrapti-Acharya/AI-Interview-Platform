@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ==============================
+         Basic Meta Information
+    =============================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PrepAI | AI Interview & Placement Preparation Platform</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ==============================
+        HEADER SECTION
+================================ -->
+
+<header>
+
+    <!-- Navigation Bar -->
+
+    <nav class="navbar">
+
+        <!-- Logo -->
+
+        <div class="logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <h2>PrepAI</h2>
+
+        </div>
+
+
+        <!-- Navigation Links -->
+
+        <ul class="nav-links">
+
+            <li><a href="#">Home</a></li>
+
+            <li><a href="#">Features</a></li>
+
+            <li><a href="#">Companies</a></li>
+
+            <li><a href="#">About</a></li>
+
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+
+
+        <!-- Buttons -->
+
+        <div class="nav-buttons">
+
+        <a href="{{ url_for('login') }}" class="login-btn">
+            Login
+        </a>
+
+        <a href="{{ url_for('register') }}" class="register-btn">
+            Register
+        </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- ==============================
+        HERO SECTION
+================================ -->
+
+<section class="hero">
+
+    <!-- Left Content -->
+
+    <div class="hero-left">
+
+        <span class="tagline">
+
+            🚀 AI Powered Career Assistant
+
+        </span>
+
+        <h1>
+
+            Prepare Smarter.
+
+            <br>
+
+            Get Placed Faster.
+
+        </h1>
+
+        <p>
+
+            Your all-in-one AI platform for
+
+            Aptitude,
+
+            Coding,
+
+            Resume Building,
+
+            Technical Interviews,
+
+            HR Interviews,
+
+            and Company Preparation.
+
+        </p>
+
+
+        <!-- Hero Buttons -->
+
+        <div class="hero-buttons">
+
+            <a href="{{ url_for('register') }}" class="start-btn">
+                Get Started 
+            </a>
+
+            <a href="#features" class="feature-btn">
+
+                Explore Features
+
+            </a>
+
+        </div>
+
+
+
+        <!-- Small Statistics -->
+
+        <div class="hero-stats">
+
+            <div>
+
+                <h3>1000+</h3>
+
+                <span>Practice Questions</span>
+
+            </div>
+
+            <div>
+
+                <h3>100+</h3>
+
+                <span>Mock Interviews</span>
+
+            </div>
+
+            <div>
+
+                <h3>50+</h3>
+
+                <span>Top Companies</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Right Side -->
+
+    <div class="hero-right">
+
+        <img src="images/hero.png" alt="AI Placement Platform">
+
+    </div>
+
+</section>
+<!-- ===========================================
+        FEATURES SECTION
+=========================================== -->
+
+<section class="features" id="features"></section>
+
+    <div class="section-title">
+
+        <h2>Platform Features</h2>
+
+        <p>Everything you need to become placement ready.</p>
+
+    </div>
+
+    <div class="feature-container">
+
+        <div class="feature-card">
+            <i class="fa-solid fa-robot"></i>
+            <h3>AI Mock Interview</h3>
+            <p>Practice HR and Technical interviews with AI-generated questions and instant feedback.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-file-lines"></i>
+            <h3>Resume Analyzer</h3>
+            <p>Upload your resume and receive ATS score, suggestions and improvements.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>Coding Practice</h3>
+            <p>Solve coding questions from beginner to advanced with explanations.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Aptitude Tests</h3>
+            <p>Quantitative, Logical and Verbal aptitude tests with timer and analysis.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-building"></i>
+            <h3>Company Preparation</h3>
+            <p>Prepare company-wise interview questions, coding rounds and eligibility.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-chart-pie"></i>
+            <h3>Progress Tracking</h3>
+            <p>Monitor your daily learning progress and placement readiness score.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===========================================
+        TOP COMPANIES
+=========================================== -->
+
+<section class="companies">
+
+    <div class="section-title">
+
+        <h2>Top Hiring Companies</h2>
+
+        <p>Prepare for interviews from leading IT companies.</p>
+
+    </div>
+
+    <div class="company-container">
+
+        <div class="company-box">Google</div>
+        <div class="company-box">Microsoft</div>
+        <div class="company-box">Amazon</div>
+        <div class="company-box">Infosys</div>
+        <div class="company-box">TCS</div>
+        <div class="company-box">Wipro</div>
+        <div class="company-box">Accenture</div>
+        <div class="company-box">IBM</div>
+
+    </div>
+
+</section>
+
+
+<!-- ===========================================
+        WHY CHOOSE US
+=========================================== -->
+
+<section class="why-us">
+
+    <div class="why-left">
+
+        <h2>Why Choose PrepAI?</h2>
+
+        <p>
+
+            PrepAI combines AI technology with placement preparation to help
+            students crack interviews, improve technical skills and land
+            their dream jobs.
+
+        </p>
+
+        <ul>
+
+            <li>✔ AI Powered Career Guidance</li>
+
+            <li>✔ Company-wise Preparation</li>
+
+            <li>✔ Resume Analysis</li>
+
+            <li>✔ Coding Practice Platform</li>
+
+            <li>✔ Mock HR & Technical Interviews</li>
+
+            <li>✔ Personalized Progress Dashboard</li>
+
+        </ul>
+
+    </div>
+
+    <div class="why-right">
+
+        <img src="images/why-us.png" alt="Why Choose PrepAI">
+
+    </div>
+
+</section>
+
+<!-- ===========================================
+        PLACEMENT PROCESS
+=========================================== -->
+
+<section class="process">
+
+    <div class="section-title">
+        <h2>Your Placement Journey</h2>
+        <p>Follow these simple steps to become placement ready.</p>
+    </div>
+
+    <div class="process-container">
+
+        <div class="process-box">
+            <span>1</span>
+            <h3>Create Account</h3>
+            <p>Register and build your professional student profile.</p>
+        </div>
+
+        <div class="process-box">
+            <span>2</span>
+            <h3>Practice Daily</h3>
+            <p>Complete aptitude, coding and technical quizzes.</p>
+        </div>
+
+        <div class="process-box">
+            <span>3</span>
+            <h3>AI Mock Interview</h3>
+            <p>Attend AI-powered HR and technical interviews.</p>
+        </div>
+
+        <div class="process-box">
+            <span>4</span>
+            <h3>Get Placed</h3>
+            <p>Apply confidently to your dream company.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===========================================
+        TESTIMONIALS
+=========================================== -->
+
+<section class="testimonials">
+
+    <div class="section-title">
+        <h2>Student Success Stories</h2>
+        <p>Hear what our students say about PrepAI.</p>
+    </div>
+
+    <div class="testimonial-container">
+
+        <div class="testimonial-card">
+            <p>
+                "PrepAI helped me improve my coding and interview confidence.
+                The AI mock interviews were amazing!"
+            </p>
+
+            <h3>Rahul Sharma</h3>
+
+            <span>Software Engineer</span>
+
+        </div>
+
+        <div class="testimonial-card">
+
+            <p>
+                "The aptitude practice and resume analyzer improved my placement
+                preparation significantly."
+            </p>
+
+            <h3>Priya Nair</h3>
+
+            <span>Placed at Infosys</span>
+
+        </div>
+
+        <div class="testimonial-card">
+
+            <p>
+                "Everything I needed for placements was available in one place.
+                Highly recommended!"
+            </p>
+
+            <h3>Arjun Kumar</h3>
+
+            <span>Placed at TCS</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===========================================
+        CALL TO ACTION
+=========================================== -->
+
+<section class="cta">
+
+    <h2>Ready to Crack Your Dream Job?</h2>
+
+    <p>
+
+        Join thousands of students preparing with AI.
+
+    </p>
+
+    <a href="{{ url_for('register') }}">
+        Start Your Journey
+    </a>
+
+</section>
+
+
+<!-- ===========================================
+        FOOTER
+=========================================== -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <h2>PrepAI</h2>
+
+            <p>
+
+                AI Interview & Placement Preparation Platform
+
+                helping students become industry ready.
+
+            </p>
+
+        </div>
+
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li><a href="#">Home</a></li>
+
+                <li><a href="#">Features</a></li>
+
+                <li><a href="#">Companies</a></li>
+
+                <li><a href="#">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer-box">
+
+            <h3>Contact</h3>
+
+            <p>support@prepai.com</p>
+
+            <p>Bangalore, India</p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 PrepAI. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+<!-- JavaScript -->
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

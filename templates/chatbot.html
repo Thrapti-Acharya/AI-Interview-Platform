@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PrepAI Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='CSS/chatbot.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="chat-container">
+
+    <!-- Header -->
+
+    <div class="chat-header">
+
+        <div>
+            <h1>🤖 PrepAI Assistant</h1>
+
+            <p>
+                Your personal placement preparation assistant
+            </p>
+        </div>
+
+        <a href="{{ url_for('dashboard') }}" class="back-btn">
+            ← Dashboard
+        </a>
+
+    </div>
+
+
+    <!-- Chat Area -->
+
+    <div class="chat-box" id="chat-box">
+
+        {% if user_message %}
+
+        <div class="message user-message">
+
+            <strong>You:</strong>
+
+            <p>
+                {{ user_message }}
+            </p>
+
+        </div>
+
+
+        <div class="message bot-message">
+
+            <strong>🤖 PrepAI:</strong>
+
+            <p>
+                {{ bot_response }}
+            </p>
+
+        </div>
+
+        {% else %}
+
+        <div class="welcome-message">
+
+            <div class="robot-icon">
+                🤖
+            </div>
+
+            <h2>
+                Hello! 👋
+            </h2>
+
+            <p>
+                I'm your placement preparation assistant.
+            </p>
+
+            <p>
+                Ask me about interviews, aptitude, coding,
+                Python, Java, SQL, resumes or careers.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+
+    <!-- Suggested Questions -->
+
+    <div class="suggestions">
+
+        <p>Try asking:</p>
+
+        <div class="suggestion-buttons">
+
+            <button type="button"
+                    onclick="askQuestion('How should I prepare for an interview?')">
+                Interview Preparation
+            </button>
+
+            <button type="button"
+                    onclick="askQuestion('How should I prepare for Python?')">
+                Python
+            </button>
+
+            <button type="button"
+                    onclick="askQuestion('How can I improve my resume?')">
+                Resume
+            </button>
+
+            <button type="button"
+                    onclick="askQuestion('How should I prepare for aptitude?')">
+                Aptitude
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Message Form -->
+
+    <form method="POST"
+          action="{{ url_for('chatbot') }}"
+          class="chat-form">
+
+        <input
+            type="text"
+            name="message"
+            id="userInput"
+            placeholder="Ask your question..."
+            autocomplete="off"
+            required>
+
+        <button type="submit">
+            Send
+        </button>
+
+    </form>
+
+
+</div>
+
+
+<script>
+
+function askQuestion(question) {
+
+    document.getElementById("userInput").value = question;
+
+    document.getElementById("userInput").focus();
+
+}
+
+</script>
+
+</body>
+
+</html>

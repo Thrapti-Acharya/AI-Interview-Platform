@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Admin Panel</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='CSS/admin.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>👨‍💼 Admin Panel</h1>
+    <div class="stats">
+
+    <div class="stat-card">
+        <h2>{{ total_students }}</h2>
+        <p>Total Students</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>{{ total_aptitude }}</h2>
+        <p>Aptitude Tests</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>{{ total_coding }}</h2>
+        <p>Coding Tests</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>{{ total_interviews }}</h2>
+        <p>Mock Interviews</p>
+    </div>
+
+</div>
+
+    <table>
+
+        <tr>
+
+            <th>Name</th>
+
+            <th>Email</th>
+
+            <th>College</th>
+
+            <th>Course</th>
+
+            <th>Graduation</th>
+
+        </tr>
+
+        {% for student in students %}
+
+        <tr>
+
+            <td>{{ student.name }}</td>
+
+            <td>{{ student.email }}</td>
+
+            <td>{{ student.college }}</td>
+
+            <td>{{ student.course }}</td>
+
+            <td>{{ student.graduation }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+
+</html>

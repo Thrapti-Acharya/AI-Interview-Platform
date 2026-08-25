@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PrepAI | My Progress</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='CSS/progress.css') }}">
+
+</head>
+
+<body>
+
+<div class="progress-container">
+
+    <div class="progress-header">
+
+        <div>
+
+            <h1>📊 My Progress</h1>
+
+            <p>
+                Track your placement preparation performance.
+            </p>
+
+        </div>
+
+        <a href="{{ url_for('dashboard') }}"
+           class="back-btn">
+
+            ← Dashboard
+
+        </a>
+
+    </div>
+
+
+    <!-- Overall Progress -->
+
+    <div class="overall-card">
+
+        <h2>Overall Progress</h2>
+
+        <div class="overall-score">
+            {{ overall_percent }}%
+        </div>
+
+        <div class="progress">
+
+            <div class="progress-bar"
+                 style="width: {{ overall_percent }}%;">
+            </div>
+
+        </div>
+
+        <p>
+            Keep practicing to improve your placement readiness.
+        </p>
+
+    </div>
+
+
+    <!-- Performance Cards -->
+
+    <div class="performance-grid">
+
+
+        <!-- Aptitude -->
+
+        <div class="performance-card">
+
+            <div class="icon">
+                🧮
+            </div>
+
+            <h2>Aptitude</h2>
+
+            <div class="score">
+                {{ aptitude_score }} / {{ aptitude_total }}
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar"
+                     style="width: {{ aptitude_percent }}%;">
+                </div>
+
+            </div>
+
+            <span>
+                {{ aptitude_percent }}%
+            </span>
+
+        </div>
+
+
+        <!-- Coding -->
+
+        <div class="performance-card">
+
+            <div class="icon">
+                💻
+            </div>
+
+            <h2>Coding</h2>
+
+            <div class="score">
+                {{ coding_score }} / {{ coding_total }}
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar"
+                     style="width: {{ coding_percent }}%;">
+                </div>
+
+            </div>
+
+            <span>
+                {{ coding_percent }}%
+            </span>
+
+        </div>
+
+
+        <!-- Interview -->
+
+        <div class="performance-card">
+
+            <div class="icon">
+                🎤
+            </div>
+
+            <h2>Mock Interview</h2>
+
+            <div class="score">
+                {{ interview_score }} / {{ interview_total }}
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar"
+                     style="width: {{ interview_percent }}%;">
+                </div>
+
+            </div>
+
+            <span>
+                {{ interview_percent }}%
+            </span>
+
+        </div>
+
+
+        <!-- Resume -->
+
+        <div class="performance-card">
+
+            <div class="icon">
+                📄
+            </div>
+
+            <h2>Resume</h2>
+
+            <div class="score">
+                {{ resume_score }} / {{ resume_total }}
+            </div>      
+
+            <div class="progress">
+
+                <div class="progress-bar"
+                    style="width: {{ resume_percent }}%;">
+                </div>
+
+            </div>
+
+            <span>
+                {{ resume_percent }}%
+            </span>
+
+            <p>
+                Resume analysis score.
+            </p>
+
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+
+</html>

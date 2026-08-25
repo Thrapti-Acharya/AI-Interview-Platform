@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Placement Prediction</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='CSS/placement.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📊 Placement Readiness</h1>
+
+    <div class="score">
+
+        <h2>{{ overall }}%</h2>
+
+    </div>
+
+    <table>
+
+        <tr>
+
+            <td>Aptitude</td>
+
+            <td>{{ aptitude }}%</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Coding</td>
+
+            <td>{{ coding }}%</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Resume</td>
+
+            <td>{{ resume }}%</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Interview</td>
+
+            <td>{{ interview }}%</td>
+
+        </tr>
+
+    </table>
+
+    <canvas id="progressChart" width="400" height="200"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const ctx = document.getElementById('progressChart');
+
+new Chart(ctx,{
+
+    type:'bar',
+
+    data:{
+
+        labels:['Aptitude','Coding','Resume','Interview'],
+
+        datasets:[{
+
+            label:'Scores',
+
+            data: [
+                Number("{{ aptitude }}"),
+                Number("{{ coding }}"),
+                Number("{{ resume }}"),
+                Number("{{ interview }}")
+            ]
+
+        }]
+
+    },
+
+    options:{
+
+        responsive:true,
+
+        scales:{
+
+            y:{
+
+                beginAtZero:true,
+
+                max:100
+
+            }
+
+        }
+
+    }
+
+});
+
+</script>
+
+    <h2>{{ message }}</h2>
+
+    <h3>Suggestions</h3>
+
+<ul>
+
+{% if aptitude < 80 %}
+<li>Practice Aptitude Questions Daily</li>
+{% endif %}
+
+{% if coding < 80 %}
+<li>Improve Data Structures & Algorithms</li>
+{% endif %}
+
+{% if resume < 80 %}
+<li>Add More Projects to Resume</li>
+{% endif %}
+
+{% if interview < 80 %}
+<li>Practice HR & Technical Interviews</li>
+{% endif %}
+
+</ul>
+
+    <a href="{{ url_for('dashboard') }}">
+
+        <button>Back</button>
+
+    </a>
+
+</div>
+
+</body>
+
+</html>

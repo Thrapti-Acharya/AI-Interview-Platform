@@ -1,0 +1,83 @@
+body{
+
+    font-family:Poppins,sans-serif;
+
+    background:#eef3ff;
+
+}
+
+.container{
+
+    width:60%;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 0 15px rgba(0,0,0,.1);
+
+}
+
+.score{
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:30px auto;
+
+    font-size:30px;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+td{
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+}
+
+button{
+
+    margin-top:30px;
+
+    padding:12px 30px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}

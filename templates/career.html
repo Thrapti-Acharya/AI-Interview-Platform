@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PrepAI | Career Roadmap</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='CSS/career.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="career-container">
+
+    <!-- Header -->
+
+    <div class="career-header">
+
+        <div>
+
+            <h1>🚀 Career Roadmap</h1>
+
+            <p>
+                Build your personalized path toward your dream career.
+            </p>
+
+        </div>
+
+        <a href="{{ url_for('dashboard') }}" class="back-btn">
+            ← Dashboard
+        </a>
+
+    </div>
+
+
+    <!-- Career Selection -->
+
+    <div class="career-selection">
+
+        <h2>🎯 Choose Your Career Goal</h2>
+
+        <p>
+            Select a career to generate a step-by-step learning roadmap.
+        </p>
+
+
+        <form method="POST">
+
+            <select name="career" required>
+
+                <option value="">
+                    Select Career
+                </option>
+
+                <option value="Python Developer"
+                    {% if selected_career == "Python Developer" %}
+                    selected
+                    {% endif %}>
+                    Python Developer
+                </option>
+
+                <option value="Full Stack Developer"
+                    {% if selected_career == "Full Stack Developer" %}
+                    selected
+                    {% endif %}>
+                    Full Stack Developer
+                </option>
+
+                <option value="AI/ML Engineer"
+                    {% if selected_career == "AI/ML Engineer" %}
+                    selected
+                    {% endif %}>
+                    AI / ML Engineer
+                </option>
+
+                <option value="Data Analyst"
+                    {% if selected_career == "Data Analyst" %}
+                    selected
+                    {% endif %}>
+                    Data Analyst
+                </option>
+
+            </select>
+
+
+            <button type="submit">
+                Generate Roadmap
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- Roadmap -->
+
+    {% if roadmap %}
+
+    <div class="roadmap-section">
+
+        <div class="roadmap-title">
+
+            <h2>
+                🗺️ {{ selected_career }} Roadmap
+            </h2>
+
+            <p>
+                Follow these steps to prepare for your career.
+            </p>
+
+        </div>
+
+
+        <div class="roadmap">
+
+            {% for step in roadmap %}
+
+            <div class="roadmap-step">
+
+
+                <div class="step-number">
+
+                    {{ loop.index }}
+
+                </div>
+
+
+                <div class="step-content">
+
+                    <div class="step-header">
+
+                        <h3>
+                            {{ step.title }}
+                        </h3>
+
+                        <span class="duration">
+                            ⏱ {{ step.duration }}
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        {{ step.description }}
+                    </p>
+
+
+                    <div class="step-status">
+
+                        <span>
+                            📚 Learning Step
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Final Goal -->
+
+        <div class="career-goal">
+
+            <div class="goal-icon">
+                🎓
+            </div>
+
+            <div>
+
+                <h3>
+                    Your Goal
+                </h3>
+
+                <p>
+                    Become a job-ready {{ selected_career }}
+                    and start applying for opportunities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+
+    {% if not roadmap and not selected_career %}
+
+    <div class="empty-roadmap">
+
+        <div class="empty-icon">
+            🧭
+        </div>
+
+        <h2>
+            Your roadmap starts here
+        </h2>
+
+        <p>
+            Select your desired career above to generate
+            your personalized learning journey.
+        </p>
+
+    </div>
+
+    {% endif %}
+
+
+</div>
+
+</body>
+
+</html>

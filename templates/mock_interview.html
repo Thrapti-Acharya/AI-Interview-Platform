@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Interview</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/mock_interview.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🎤 AI Mock Interview</h1>
+
+    <div class="question-box">
+
+        <h2>Question 1</h2>
+
+        <p id="question">
+            Tell me about yourself.
+        </p>
+
+    </div>
+
+    <textarea
+        id="answer"
+        placeholder="Type your answer here..."
+        rows="8">
+    </textarea>
+
+    <br><br>
+
+    <button id="nextBtn">
+        Next Question
+    </button>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/mock_interview.js') }}"></script>
+
+</body>
+</html>

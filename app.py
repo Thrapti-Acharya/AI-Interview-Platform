@@ -5,7 +5,10 @@ import PyPDF2
 
 app = Flask(__name__)
 
-app.config["UPLOAD_FOLDER"] = "uploads"
+UPLOAD_FOLDER = os.path.join(app.root_path, "uploads")
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 app.secret_key = os.environ.get(
     "SECRET_KEY",
